@@ -2,6 +2,14 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+app.use(function(req, res, next) {//for  cross-origin request block
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 const SensorData_routes = require("./routes/SensorData");//import routes
 const connectDB = require("./db/connect");
 
