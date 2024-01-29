@@ -5,7 +5,15 @@ const sensorDataSchema = new mongoose.Schema({
         type:Number,
         default:0
     },
+    humidity:{
+        type:Number,
+        default:0
+    },
     gasreading:{
+        type:Number,
+        default:0
+    },
+    nobstatus:{
         type:Number,
         default:0
     },
