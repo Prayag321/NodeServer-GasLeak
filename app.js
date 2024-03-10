@@ -18,7 +18,7 @@ const sendSms_routes = require("./routes/SendSms");
 
 const connectDB = require("./db/connect");
 
-app.get("/",(req,res)=>{res.send("hello")});//test
+app.get("/",(req,res)=>{ res.status(200).send('Hello');});//test
 
 app.use("/api/sensordata",SensorData_routes);//set souter middleware for api
 app.use("/receiveData",receiveData_routes);//for receiving data from nodemcu
