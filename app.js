@@ -11,14 +11,18 @@ app.use(function(req, res, next) {//for  cross-origin request block
     next();
   });
 
-const SensorData_routes = require("./routes/SensorData");//import routes
+//import routes
+const SensorData_routes = require("./routes/SensorData");
+const receiveData_routes = require("./routes/ReceiveData");
+const sendSms_routes = require("./routes/SendSms");
+
 const connectDB = require("./db/connect");
 
 app.get("/",(req,res)=>{res.send("hello")});//test
-app.use("/api/sensordata",SensorData_routes);//set souter middleware for api
 
-receiveData_routes = require("./routes/ReceiveData");
+app.use("/api/sensordata",SensorData_routes);//set souter middleware for api
 app.use("/receiveData",receiveData_routes);//for receiving data from nodemcu
+app.use("/sendSms",sendSms_routes)
 
 const start = async()=>{
     try{
