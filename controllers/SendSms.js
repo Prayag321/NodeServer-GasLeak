@@ -11,7 +11,7 @@ const client = require('twilio')(apiKey, apiSecret, { accountSid: accountSid });
 const sendSms= async(req,res)=>{
     client.messages
     .create({
-        body: 'Fire is detected in the lab',
+        body: 'Gas is detected in the lab',
         from: '+12295455646',
         to: '+918369204930'
     },function(err, message) {
